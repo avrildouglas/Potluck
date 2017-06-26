@@ -19,7 +19,6 @@ public class PotluckReturnController {
 		return "potluckInput";
 	}
 	
-	
 	@PostMapping("/potluck")
 	public String potluckSubmit(@ModelAttribute Potluck foods) {
         return "potluckOutput";

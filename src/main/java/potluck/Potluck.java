@@ -1,7 +1,17 @@
 package potluck;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.Min;
+
+@Entity
 public class Potluck {
-	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Min(1)
+		
 	private Long plId;
 	private String name;
 	private String food;
