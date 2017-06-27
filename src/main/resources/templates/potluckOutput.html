@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<meta charset="UTF-8" />
+<title>Display Food List</title>
 </head>
 <body>
-      <h1>Food Output</h1>
-      <p th:text="'id: ' + ${foods.id}" />
-      <p th:text="'name: ' + ${foods.name}" />
-      <p th:text="'food: ' + ${foods.food}" />
-      <a href="/potluckInput">Submit another message</a>
+<div class="col-lg-3" th:object="${foods}">
+    <select class="form-control" id="plId" name="foodOrder">
+        <option value="">Select Food Order</option>
+        <option th:each="food : ${foods}"
+                th:value="${foods.id}"
+                th:text="${foods.name}+' : '+${foods.food}"></option>
+    </select>
+</div>
+<br><br>
+      <a href="Welcome.html">Return to Welcome Page</a>
 </body>
 </html>

@@ -2,18 +2,16 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>Insert title here</title>
+<title>Remove Food from Potluck</title>
 </head>
 <body>
-<h1>Potluck</h1>
-<h1>Form</h1>
-      <form action="#" th:action="@{/potluck]}" th:object="${foods}" method="post">
-      <!-- <p>Id: <input type="text" th:field="*{id}" /></p> -->          
-          <p> Name: <input type="text" th:field="*{name}" /></p>
-          <p>Food: <input type="text" th:field="*{food}" /></p>
-          
-          <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-	</form>
-
+<div class="col-lg-3" th:object="${foods}">
+    <select class="Potluck" id="plId" name="food">
+        <option value="">Select Food Order</option>
+        <option th:each="food : ${foods}"
+                th:value="${foods.plId}"
+                th:text="${foods.name}+' : '+${foods.food}"></option>
+    </select>
+</div>
 </body>
 </html>
